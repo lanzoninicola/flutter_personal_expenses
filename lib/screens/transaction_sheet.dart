@@ -4,6 +4,8 @@ import 'package:flutter_personal_expenses/model/categories.dart';
 
 Categories transactionCategories = Categories();
 
+class Foo extends BorderSide {}
+
 class TransactionSheet extends StatefulWidget {
   @override
   _TransactionSheetState createState() => _TransactionSheetState();
@@ -64,7 +66,7 @@ class _TransactionSheetState extends State<TransactionSheet> {
   BorderSide borderSide = BorderSide(color: Colors.red);
 
   OutlineInputBorder outlineInputBorder = const OutlineInputBorder()
-      .copyWith(borderSide: BorderSide(color: Colors.red));
+      .copyWith(borderSide: BorderSide().copyWith(color: Colors.red));
 
   Widget _buildInputExpenseName() {
     return TextField(
@@ -74,8 +76,7 @@ class _TransactionSheetState extends State<TransactionSheet> {
         letterSpacing: .5,
       ),
       decoration: InputDecoration(
-        hintText: 'Enter a search term',
-        border: outlineInputBorder,
+        labelText: 'Onde voce gasto o dinheiro',
       ),
     );
   }
